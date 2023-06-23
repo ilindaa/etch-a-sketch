@@ -1,9 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 * {
     box-sizing: border-box;
+    font-family: "Silkscreen";
+}
+
+#screen-border {
+    background-color: #d30000;
+    color: #f0d47e;
+    box-shadow: 1.5px 1.5px 5px #120000;
+    height: 700px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#etch-text {
+    border: 1px black;
+    font-size: 50px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    gap: 500px;
+}
+
+.white-circle {
+    background-color: #ffffff;
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
 }
 
 #container {
-    background-color: pink;
     height: 500px;
     width: 500px;
     display: flex;
@@ -13,8 +45,8 @@
 }
 
 .squareDivs {
-    background-color: white;
-    border: 1px solid white;
+    background-color: #e2e2e2;
+    /* border: 1px solid white; */
     height: 31.25px;
     width: 31.25px;
 }
