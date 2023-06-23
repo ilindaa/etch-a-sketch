@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch A Sketch</title>
+    <title>Etch a Sketch</title>
     <script src="javascript.js" defer></script> <!-- defer -->
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <button id="dimension" onclick="promptDimension()">Change Dimension</button>
+    <button id="dimension" onclick="promptDimension()">New Grid</button>
+    <input id="userColor" type="color" onchange="updateColor(getUserColor())">
+
+    <button id="color-pen" onclick="updateColor(getUserColor())">Get Color</button>
+    <button id="default-pen" onclick="updateColor(setDefaultUserColor())">Reset Color</button>
+    <button id="eraser" onclick="updateColor('#e2e2e2')">Eraser</button>
+    <button id="clear" onclick="reset()">Clear All</button>
+
     <div id="screen-border">
         <div id="etch-text">Etch a Sketch</div>
         <div id="container"></div>
-        <!--
         <div class="controls">
             <div class="white-circle"></div>
             <div class="white-circle"></div>
-        </div> -->
+        </div>
     </div>
 </body>
 </html>

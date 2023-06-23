@@ -44,9 +44,14 @@
     align-content: flex-start;
 }
 
+.divRow {
+    display: flex;
+}
+
 .squareDivs {
     background-color: #e2e2e2;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border: none;
     height: 31.25px;
     width: 31.25px;
 }

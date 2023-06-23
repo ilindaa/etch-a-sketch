@@ -4,7 +4,7 @@ const container = document.querySelector('#container');
 let squareDimension = 16;
 const dimensionButton = document.querySelector('dimension');
 
-// prompt the user for a dimension; if the user enters smth within the range, save it to squareDimension and update the grid
+// prompt the user for a dimension; if the user enters a num within the range, save it to squareDimension and update the grid
 function promptDimension() {
     let userDimension = -1;
     while(userDimension < 0 || userDimension > 100 || userDimension === "") {
@@ -12,9 +12,13 @@ function promptDimension() {
     }
     if(userDimension !== null) {
         squareDimension = userDimension;
-        deleteDivs();
-        createSomeDivs();
+        reset();
     }
+}
+
+/* Delete the square divs */
+function deleteDivs() {
+    container.innerHTML = "";
 }
 
 /* Create the square divs */
@@ -37,37 +41,36 @@ function createSomeDivs() {
     for(let i = 0; i < squareDimension; i++) {
         container.appendChild(row.cloneNode(true));
     }
-
-    /*
-        square.addEventListener('mouseover', defaultBlack);
-        // square.addEventListener('mouseover', erase)
-    */
 }
 
-/*
-const allDiv = document.querySelectorAll('.squareDivs');
-console.log(allDiv);
-allDiv.forEach(div, addEL(defaultBlack()));
-
-function addEL(event) {
-    this.addEventListener('click', event);
-}
-*/
-
-// default hover effect
-function defaultBlack() {
-    this.style.backgroundColor = "#202020";
+// what i could do is do one where i create the default
+// then i call or add a string when im calling the function
+// or i create a separate function and call the default
+function updateColor(newColor) {
+    const allDiv = document.querySelectorAll('.squareDivs');
+    allDiv.forEach(function(elem) {
+        elem.addEventListener('mouseover', function() {
+            this.style.backgroundColor = newColor;
+        });
+    });
 }
 
-// erase
-function erase() {
-    this.style.backgroundColor = "#e2e2e2";
+// what i could do is base it solely on the user's color pen, but by default it's #202020, i can add a button to reset the color of the pen
+function getUserColor() {
+    return document.getElementById('userColor').value;
 }
 
-/* Delete the square divs */
-function deleteDivs() {
-    container.innerHTML = "";
+function setDefaultUserColor() {
+    return document.getElementById('userColor').value = '#202020';
+}
+
+// clear the grid
+function reset() {
+    deleteDivs();
+    createSomeDivs();
+    updateColor(getUserColor());
 }
 
 // run when page is loaded
 createSomeDivs();
+updateColor(setDefaultUserColor());
