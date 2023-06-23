@@ -4,12 +4,14 @@ const container = document.querySelector('#container');
 let squareDimension = 16;
 const dimensionButton = document.querySelector('dimension');
 
+// prompt the user for a dimension; if the user enters smth within the range, save it to squareDimension and update the grid
 function promptDimension() {
-    squareDimension = -1;
-    while(squareDimension < 0 || squareDimension > 100 || squareDimension === "") {
-        squareDimension = prompt("Enter the number of squares you want per side for the new grid.\nRange: 1-100 squares per side.\nNote: This will delete the existing grid and create a new grid. ");
+    let userDimension = -1;
+    while(userDimension < 0 || userDimension > 100 || userDimension === "") {
+        userDimension = prompt("Enter the number of squares you want per side for the new grid.\nRange: 1-100 squares per side.\nNote: This will delete the existing grid and create a new grid. ");
     }
-    if(squareDimension !== null) {
+    if(userDimension !== null) {
+        squareDimension = userDimension;
         deleteDivs();
         createSomeDivs();
     }
@@ -17,22 +19,40 @@ function promptDimension() {
 
 /* Create the square divs */
 function createSomeDivs() {
-    let total = Math.pow(squareDimension, 2);
+    let row = document.createElement('div');
+    row.classList.add("divRow");
 
-    for(let i = 0; i < total; i++) {
-        let squareHeightWidth = container.clientHeight/squareDimension;
+    let squareHeightWidth = container.clientHeight/squareDimension;
+
+    for(let i = 0; i < squareDimension; i++) {
         let square = document.createElement('div');
 
-        square.classList.add("squareDivs");
+        square.classList.add('squareDivs');
         square.style.height = `${squareHeightWidth}px`;
         square.style.width = `${squareHeightWidth}px`;
 
-        container.appendChild(square);
+        row.appendChild(square);
+    }
 
+    for(let i = 0; i < squareDimension; i++) {
+        container.appendChild(row.cloneNode(true));
+    }
+
+    /*
         square.addEventListener('mouseover', defaultBlack);
         // square.addEventListener('mouseover', erase)
-    }
+    */
 }
+
+/*
+const allDiv = document.querySelectorAll('.squareDivs');
+console.log(allDiv);
+allDiv.forEach(div, addEL(defaultBlack()));
+
+function addEL(event) {
+    this.addEventListener('click', event);
+}
+*/
 
 // default hover effect
 function defaultBlack() {
