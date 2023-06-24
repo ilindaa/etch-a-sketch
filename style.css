@@ -4,12 +4,35 @@
     font-family: "Silkscreen";
 }
 
+body {
+    background-color: lightskyblue;
+}
+
+button {
+    background-color: #a00202;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 80px;
+    width: 100px;
+}
+
+#userColor {
+    background-color: transparent;
+    border: none;
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+}
+
 #screen-border {
     background-color: #d30000;
     color: #f0d47e;
     box-shadow: 1.5px 1.5px 5px #120000;
-    height: 700px;
-    width: 700px;
+    height: 745px;
+    width: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,16 +43,27 @@
 #etch-text {
     border: 1px black;
     font-size: 50px;
+    padding: 0;
+    margin: 0;
 }
 
-.controls {
+.control-buttons {
+    padding-top: 5px;
     display: flex;
-    justify-content: space-around;
-    gap: 500px;
+    gap: 5px;
+}
+
+.button-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    word-wrap: true;
 }
 
 .white-circle {
     background-color: #ffffff;
+    border: 5px solid rgb(235, 235, 237);
     height: 80px;
     width: 80px;
     border-radius: 100px;
@@ -50,8 +84,16 @@
 
 .squareDivs {
     background-color: #e2e2e2;
-    /* border: 1px solid black; */
-    border: none;
     height: 31.25px;
     width: 31.25px;
+}
+
+.gridToggle {
+    border: 1px solid #e2e2e2;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

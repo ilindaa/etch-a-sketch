@@ -32,6 +32,7 @@ function createSomeDivs() {
         let square = document.createElement('div');
 
         square.classList.add('squareDivs');
+        square.classList.add('gridToggle');
         square.style.height = `${squareHeightWidth}px`;
         square.style.width = `${squareHeightWidth}px`;
 
@@ -64,11 +65,52 @@ function setDefaultUserColor() {
     return document.getElementById('userColor').value = '#202020';
 }
 
+// random color
+function randomColor() {
+    const allDiv = document.querySelectorAll('.squareDivs');
+    allDiv.forEach(function(elem) {
+        elem.addEventListener('mouseover', function() {
+            let ranColor = 'rgb(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ')';
+            this.style.backgroundColor = ranColor;
+        });
+    });
+}
+
+/* 
+function darkenColor() {
+    const allDiv = document.querySelectorAll('.squareDivs');
+    allDiv.forEach(function(elem) {
+        elem.addEventListener('mouseover', function() {
+            let currColor = elem.style.backgroundColor;
+            console.log(currColor);
+            let rgbArr = currColor.slice(4, currColor.length-1).split(', ');
+            let rDiff = rgbArr[0]/10;
+            let gDiff = rgbArr[1]/10;
+            let bDiff = rgbArr[2]/10;
+
+            rgbArr[0] -= rDiff;
+            rgbArr[1] -= gDiff;
+            rgbArr[2] -= bDiff;
+
+            let rgbDiff = 'rgb(' + rgbArr[0] + ', ' + rgbArr[1] + ', ' + rgbArr[2] + ')'
+            this.style.backgroundColor = rgbDiff;
+        });
+    });
+} */
+
 // clear the grid
 function reset() {
     deleteDivs();
     createSomeDivs();
     updateColor(getUserColor());
+}
+
+// toggle the grid
+function toggleGrid() {
+    const allDiv = document.querySelectorAll('.squareDivs');
+    allDiv.forEach(function(elem) {
+        elem.classList.toggle('gridToggle');
+    })
 }
 
 // run when page is loaded

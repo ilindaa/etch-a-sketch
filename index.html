@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch a Sketch</title>
+    <title>Etch-A-Sketch</title>
     <script src="javascript.js" defer></script> <!-- defer -->
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <button id="dimension" onclick="promptDimension()">New Grid</button>
-    <input id="userColor" type="color" onchange="updateColor(getUserColor())">
+    <div class="center">
+        <div id="screen-border">
+            <div id="etch-text">Etch-A-Sketch</div>
+            <div id="container"></div>
 
-    <button id="color-pen" onclick="updateColor(getUserColor())">Get Color</button>
-    <button id="default-pen" onclick="updateColor(setDefaultUserColor())">Reset Color</button>
-    <button id="eraser" onclick="updateColor('#e2e2e2')">Eraser</button>
-    <button id="clear" onclick="reset()">Clear All</button>
+            <div class="control-buttons">
+                <div class="white-circle"></div>
 
-    <div id="screen-border">
-        <div id="etch-text">Etch a Sketch</div>
-        <div id="container"></div>
-        <div class="controls">
-            <div class="white-circle"></div>
-            <div class="white-circle"></div>
+                <div class="button-item">
+                    <button id="dimension" onclick="promptDimension()">New Grid</button>
+                    <button id="clear" onclick="reset()">Clear Grid</button>
+                </div>
+
+                <div class="button-item">
+                    <button id="color-pen" onclick="updateColor(getUserColor())">
+                        Color
+                        <input id="userColor" type="color" onchange="updateColor(getUserColor())">
+                        </button>
+                    <button id="default-pen" onclick="updateColor(setDefaultUserColor())">Color Reset</button>
+                </div>
+
+                <div class="button-item">
+                    <button id="random-pen" onclick="randomColor()">Random</button>
+                    <!-- <button id="darken-pen" onclick="darkenColor()">Darken</button> -->
+                </div>
+
+                <div class="button-item">
+                    <button id="eraser" onclick="updateColor('#e2e2e2')">Eraser</button>
+
+                    <button id="grid" onclick="toggleGrid()">Toggle Grid</button>
+                </div>
+
+                <div class="white-circle"></div>
+            </div>
+            
         </div>
     </div>
 </body>
