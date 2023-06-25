@@ -4,29 +4,68 @@
     font-family: "Silkscreen";
 }
 
+/* body, footer, space: footer at the bottom and stretch the space to fill */
 body {
-    background-color: lightskyblue;
+    background-color: #02aae9;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    flex: 1;
+}
+
+/* control buttons */
+button,
+#userColor {
+    cursor: pointer;
+    border: none;
+}
+
+button,
+#screen-border,
+#container {
+    border-radius: 10px;
 }
 
 button {
-    background-color: #a00202;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+    background-color: #a30305;
+    box-shadow: 1px 1px 2px #120000;
     font-size: 16px;
     height: 80px;
     width: 100px;
-}
-
-#userColor {
-    background-color: transparent;
-    border: none;
-    height: 38px;
-    width: 38px;
+    padding: 10px;
     cursor: pointer;
 }
 
+/* input color */
+#userColor {
+    background-color: transparent;
+    height: 38px;
+    width: 38px;
+}
+
+/* center the Etch-A-Sketch */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* screen border around the container */
 #screen-border {
     background-color: #d30000;
     color: #f0d47e;
@@ -37,38 +76,45 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
 }
 
+/* Etch-A-Sketch title text */
 #etch-text {
     border: 1px black;
+    text-shadow: 2px 3px 6px #120000;
     font-size: 50px;
     padding: 0;
     margin: 0;
 }
 
+/* user control buttons */
+.control-buttons,
+.button-item {
+    gap: 5px;
+}
+
 .control-buttons {
     padding-top: 5px;
     display: flex;
-    gap: 5px;
 }
 
 .button-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     text-align: center;
     word-wrap: true;
 }
 
+/* decorative circles design */
 .white-circle {
     background-color: #ffffff;
     border: 5px solid rgb(235, 235, 237);
     height: 80px;
     width: 80px;
-    border-radius: 100px;
+    border-radius: 50%;
 }
 
+/* container stores all the divs */
 #container {
     height: 500px;
     width: 500px;
@@ -78,22 +124,19 @@ button {
     align-content: flex-start;
 }
 
+/* each row for the divs */
 .divRow {
     display: flex;
 }
 
+/* each div in the row */
 .squareDivs {
     background-color: #e2e2e2;
     height: 31.25px;
     width: 31.25px;
 }
 
+/* grid toggle border */
 .gridToggle {
     border: 1px solid #e2e2e2;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

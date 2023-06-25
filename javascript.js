@@ -103,6 +103,7 @@ function reset() {
     deleteDivs();
     createSomeDivs();
     updateColor(getUserColor());
+    cuttingCorners();
 }
 
 // toggle the grid
@@ -113,6 +114,25 @@ function toggleGrid() {
     })
 }
 
+// round corners
+function cuttingCorners() {
+        const container = document.getElementById('container');
+        console.log(container);
+        const firstRow = container.firstChild;
+        const lastRow = container.lastChild;
+
+        const topLeft = firstRow.firstChild;
+        const topRight = firstRow.lastChild;
+        const botLeft = lastRow.firstChild;
+        const botRight = lastRow.lastChild;
+    
+    topLeft.style.borderTopLeftRadius = '10px';
+    topRight.style.borderTopRightRadius = '10px';
+    botLeft.style.borderBottomLeftRadius = '10px';
+    botRight.style.borderBottomRightRadius = '10px';
+}
+
 // run when page is loaded
 createSomeDivs();
 updateColor(setDefaultUserColor());
+cuttingCorners();
