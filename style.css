@@ -4,7 +4,7 @@
     font-family: "Silkscreen";
 }
 
-/* body, footer, space: footer at the bottom and stretch the space to fill */
+/* Body, footer, space: footer at the bottom and stretch the space to fill */
 body {
     background-color: #02aae9;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     flex-direction: column;
 }
 
-/* footer */
+/* Footer */
 footer {
     text-align: center;
     height: 100px;
@@ -28,7 +28,7 @@ footer {
     flex: 1;
 }
 
-/* control buttons */
+/* Control buttons */
 button,
 #userColor {
     cursor: pointer;
@@ -51,25 +51,35 @@ button {
     cursor: pointer;
 }
 
+/* Darken/Brighten Pen */
+#darken-pen,
+#brighten-pen {
+    height: 37px;
+}
+
+#brighten-pen {
+    font-size: 14px;
+}
+
 button:hover {
     background-color: #ffffff;
 }
 
-/* input color */
+/* Input color */
 #userColor {
     background-color: transparent;
     height: 38px;
     width: 38px;
 }
 
-/* center the Etch-A-Sketch */
+/* Center the Etch-A-Sketch */
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* screen border around the container */
+/* Screen border around the container */
 #screen-border {
     background-color: #d30000;
     color: #f0d47e;
@@ -91,7 +101,7 @@ button:hover {
     margin: 0;
 }
 
-/* user control buttons */
+/* User control buttons */
 .control-buttons,
 .button-item {
     gap: 5px;
@@ -109,7 +119,7 @@ button:hover {
     word-wrap: true;
 }
 
-/* decorative circles design */
+/* Decorative circles design */
 .white-circle {
     background-color: #ffffff;
     border: 5px solid rgb(235, 235, 237);
@@ -118,7 +128,7 @@ button:hover {
     border-radius: 50%;
 }
 
-/* container stores all the divs */
+/* Container stores all the divs */
 #container {
     height: 500px;
     width: 500px;
@@ -128,19 +138,19 @@ button:hover {
     align-content: flex-start;
 }
 
-/* each row for the divs */
+/* Each row for the divs */
 .divRow {
     display: flex;
 }
 
-/* each div in the row */
+/* Each div in the row */
 .squareDivs {
     background-color: #e2e2e2;
     height: 31.25px;
     width: 31.25px;
 }
 
-/* grid toggle border */
+/* Grid toggle border */
 .gridToggle {
     border: 1px solid #e2e2e2;
 }
