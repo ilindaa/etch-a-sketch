@@ -7,7 +7,7 @@ const dimensionButton = document.querySelector('dimension');
 // Prompt the user for a dimension; if the user enters a num within the range, save it to squareDimension and update the grid
 function promptDimension() {
     let userDimension = -1;
-    while(userDimension < 0 || userDimension > 100 || userDimension === "") {
+    while(userDimension < 0 || userDimension > 100 || userDimension === "" || isNaN(userDimension)) {
         userDimension = prompt("Enter the number of squares you want per side for the new grid.\nRange: 1-100 squares per side.\nNote: This will delete the existing grid and create a new grid. ");
     }
     if (userDimension !== null) {
