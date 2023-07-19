@@ -18,28 +18,28 @@
                 <div class="white-circle"></div>
 
                 <div class="button-item">
-                    <button id="dimension" onclick="promptDimension()">New Grid</button>
-                    <button id="clear" onclick="clearGrid()">Clear Grid</button>
+                    <button type="button" id="dimension" onclick="promptDimension()">New Grid</button>
+                    <button type="button" id="clear" onclick="clearGrid()">Clear Grid</button>
                 </div>
 
                 <div class="button-item">
-                    <button id="default-pen" onclick="updateColor(setDefaultUserColor())">Color Reset</button>
-                    <button id="color-pen" onclick="updateColor(getUserColor())">
+                    <button type="button" id="default-pen" onclick="updateColor(setDefaultUserColor())">Color Reset</button>
+                    <button type="button" id="color-pen" onclick="updateColor(getUserColor())">
                         Color
                         <input id="userColor" type="color" onchange="updateColor(getUserColor())">
                     </button>
                 </div>
 
                 <div class="button-item">
-                    <button id="random-pen" onclick="randomColor()">Random</button>
-                    <button id="darken-pen" onclick="darkenColor()">Darken</button>
-                    <button id="brighten-pen" onclick="brightenColor()">Brighten</button>
+                    <button type="button" id="random-pen" onclick="randomColor()">Random</button>
+                    <button type="button" id="darken-pen" onclick="darkenColor()">Darken</button>
+                    <button type="button" id="brighten-pen" onclick="brightenColor()">Brighten</button>
                 </div>
 
                 <div class="button-item">
-                    <button id="eraser" onclick="updateColor('#e2e2e2')">Eraser</button>
+                    <button type="button" id="eraser" onclick="updateColor('#e2e2e2')">Eraser</button>
 
-                    <button id="grid" onclick="toggleGrid()">Toggle Grid</button>
+                    <button type="button" id="grid" onclick="toggleGrid()">Toggle Grid</button>
                 </div>
 
                 <div class="white-circle"></div>
