@@ -23,21 +23,21 @@
                 </div>
 
                 <div class="button-item">
-                    <button type="button" id="default-pen" onclick="updateColor(setDefaultUserColor())">Color Reset</button>
-                    <button type="button" id="color-pen" onclick="updateColor(getUserColor())">
+                    <button type="button" id="default-pen" onclick="updateColor(setDefaultUserColor()); makeColorActive()">Color Reset</button>
+                    <button type="button" id="color-pen" onclick="updateColor(getUserColor()); makeActive(event)">
                         Color
-                        <input id="userColor" type="color" onchange="updateColor(getUserColor())">
+                        <input id="userColor" type="color" onchange="updateColor(getUserColor()); makeColorActive()">
                     </button>
                 </div>
 
                 <div class="button-item">
-                    <button type="button" id="random-pen" onclick="randomColor()">Random</button>
-                    <button type="button" id="darken-pen" onclick="darkenColor()">Darken</button>
-                    <button type="button" id="brighten-pen" onclick="brightenColor()">Brighten</button>
+                    <button type="button" id="random-pen" onclick="randomColor(); makeActive(event)">Random</button>
+                    <button type="button" id="darken-pen" onclick="darkenColor(); makeActive(event)">Darken</button>
+                    <button type="button" id="brighten-pen" onclick="brightenColor(); makeActive(event)">Brighten</button>
                 </div>
 
                 <div class="button-item">
-                    <button type="button" id="eraser" onclick="updateColor('#e2e2e2')">Eraser</button>
+                    <button type="button" id="eraser" onclick="updateColor('#e2e2e2'); makeActive(event)">Eraser</button>
 
                     <button type="button" id="grid" onclick="toggleGrid()">Toggle Grid</button>
                 </div>

@@ -61,7 +61,9 @@ button {
     font-size: 14px;
 }
 
-button:hover {
+/* The active pseudoclass for button and the active class for button showing which button is selected */
+button:active,
+.active {
     background-color: #ffffff;
 }
 

@@ -273,6 +273,7 @@ function reset() {
     createSomeDivs();
     updateColor(getUserColor());
     cuttingCorners();
+    makeColorActive();
 }
 
 // Toggle the grid
@@ -285,20 +286,40 @@ function toggleGrid() {
 
 // Round corners
 function cuttingCorners() {
-        const container = document.getElementById('container');
+    const container = document.getElementById('container');
 
-        const firstRow = container.firstChild;
-        const lastRow = container.lastChild;
+    const firstRow = container.firstChild;
+    const lastRow = container.lastChild;
 
-        const topLeft = firstRow.firstChild;
-        const topRight = firstRow.lastChild;
-        const botLeft = lastRow.firstChild;
-        const botRight = lastRow.lastChild;
+    const topLeft = firstRow.firstChild;
+    const topRight = firstRow.lastChild;
+    const botLeft = lastRow.firstChild;
+    const botRight = lastRow.lastChild;
     
     topLeft.style.borderTopLeftRadius = '10px';
     topRight.style.borderTopRightRadius = '10px';
     botLeft.style.borderBottomLeftRadius = '10px';
     botRight.style.borderBottomRightRadius = '10px';
+}
+
+// Make event target button active
+function makeActive(event) {
+    // Clear any active buttons
+    let prev = document.getElementsByClassName('active');
+    if (prev.length > 0) {
+        prev[0].className = prev[0].className.replace('active', '');
+    }
+    // If there is an event target button to make active, make it active (this is skipped over when color is made active)
+    if(event !== 'clear') {
+        event.target.className += 'active';
+    }
+}
+
+// Make the color button active (new grid, clear grid, input type color, color reset)
+function makeColorActive() {
+    makeActive('clear');
+    const color = document.getElementById('color-pen');
+    color.classList.add('active');
 }
 
 function removeEventListeners() {
@@ -314,3 +335,4 @@ function removeEventListeners() {
 createSomeDivs();
 updateColor(setDefaultUserColor());
 cuttingCorners();
+makeColorActive();
